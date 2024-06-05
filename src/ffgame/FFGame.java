@@ -4,15 +4,8 @@
  */
 package ffgame;
 
-/**
- *
- * @author ADMIN
- */
 public class FFGame {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         
     }
