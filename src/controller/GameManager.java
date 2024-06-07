@@ -1,16 +1,20 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package controller;
+
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import model.Bubble;
-import model.Direction;
-import model.GameObject;
+
+import com.bilkent.feedingbobby.model.Bubble;
+import com.bilkent.feedingbobby.model.Direction;
+import com.bilkent.feedingbobby.model.GameObject;
 import model.PlayerFish;
 import view.GamePanel;
-
 
 //chịu trách nhiệm quản lý vòng lặp chính của trò chơi, xử lý các trạng thái của trò chơi
 public class GameManager {
