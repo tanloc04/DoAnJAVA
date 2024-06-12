@@ -8,6 +8,6 @@ package model;
  *
  * @author ADMIN
  */
-public enum Direction {
-    LEFT, RIGHT, UP, DOWN
+public abstract class SpecialFish extends Fish{
+    
 }

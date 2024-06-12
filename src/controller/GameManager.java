@@ -10,9 +10,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import com.bilkent.feedingbobby.model.Bubble;
-import com.bilkent.feedingbobby.model.Direction;
-import com.bilkent.feedingbobby.model.GameObject;
+import model.Bubble;
+import model.Direction;
+import model.GameObject;
 import model.PlayerFish;
 import view.GamePanel;
 

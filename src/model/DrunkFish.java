@@ -4,10 +4,18 @@
  */
 package model;
 
+import controller.GameManager;
+import controller.GameMapManager;
 /**
  *
  * @author ADMIN
  */
-public class DrunkFish {
-    
+public class DrunkFish extends SpecialFish{
+    @Override
+    public void move() {
+    }
+
+    @Override
+    public void updateState( GameManager gameManager, GameMapManager gameMapManager, PlayerFish playerFish) {
+    }
 }

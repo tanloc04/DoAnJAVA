@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import com.bilkent.feedingbobby.model.Bubble;
+import model.Bubble;
 import model.Direction;
 import model.EnemyFish;
-import com.bilkent.feedingbobby.model.GameObject;
+import model.GameObject;
 import model.JellyFish;
 import model.PufferFish;
 import view.GamePanel;
