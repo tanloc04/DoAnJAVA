@@ -10,12 +10,14 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import com.bilkent.feedingbobby.model.Direction;
+import model.Direction;
 
+//Kế thừa MouseAdapter để xử lý sự kiện chuột và triển khai KeyListener để xử lý sự kiện bàn phím.
 public class InputManager extends MouseAdapter implements KeyListener {
 
     private static InputManager instance = null;
-
+    
+//getInstance(): Sử dụng mẫu Singleton để đảm bảo chỉ có một thể hiện của InputManager trong suốt vòng đời của ứng dụng.
     public static synchronized InputManager getInstance() {
         if (instance == null) {
             instance = new InputManager();
@@ -38,14 +40,18 @@ public class InputManager extends MouseAdapter implements KeyListener {
     public Direction getChangeDirection() {
         return changeDirection;
     }
-
+    
+//Phương thức mouseMoved được gọi mỗi khi con trỏ chuột di chuyển.
     @Override
     public void mouseMoved( MouseEvent e) {
+//        Kiểm tra xem tọa độ x của con trỏ chuột trước khi di chuyển (mousePoint.x) 
+//        có lớn hơn tọa độ x mới của con trỏ chuột (e.getPoint().x) hay không.
         if (mousePoint.x > e.getPoint().x) {
             changeDirection = Direction.LEFT;
         } else {
             changeDirection = Direction.RIGHT;
         }
+//        Cập nhật tọa độ chuột
         mousePoint = e.getPoint();
     }
 
