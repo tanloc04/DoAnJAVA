@@ -33,7 +33,10 @@ public class CreditsPanel extends MenuPanel{
         gridBagLayout.rowWeights = new double[] { 1.0, 0.0, Double.MIN_VALUE };
         setLayout(gridBagLayout);
         
-        textArea = new JTextArea("Tansel Altınel (Tanshaydar)");
+        textArea = new JTextArea("Controller: Trương Thanh Hạ \n" + 
+                "Model(1->7): Lê Hồ Thành Tài \n" +
+                "Model (8->14): Nguyễn Đỗ Lương Huỳnh \n" +
+                "View: Nguyễn Tấn Lộc");
         textArea.setFont(new Font("Tahoma", Font.BOLD, 12));
         textArea.setWrapStyleWord(true);
         textArea.setLineWrap(true);

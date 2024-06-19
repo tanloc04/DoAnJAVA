@@ -33,11 +33,10 @@ public class AboutPanel extends MenuPanel{
         setLayout(gridBagLayout);
 
         textArea = new JTextArea(
-                "This game is developed to help a couple of students in university "
-                + "who were taking a course about object oriented programming. \n"
-                + "This is a simple \"Feeding Frenzy\" game clone, written in Java "
-                + "and developed by single person using various free to use images "
-                + "from around internet.");
+                "Đây là đồ án lập trình môn Lập Trình Java. \n"
+                + "Được thực hiện bởi nhóm 19. \n"
+                + "Tổ chức và lập trình theo mô hình MVC. \n"
+                + "Cảm ơn vì đã chơi!");
         textArea.setFont(new Font("Tahoma", Font.BOLD, 12));
         textArea.setWrapStyleWord(true);
         textArea.setLineWrap(true);

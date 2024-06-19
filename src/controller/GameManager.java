@@ -26,7 +26,7 @@ public class GameManager {
      */
     private static final long REFRESH_INTERVAL_MS = 25;
     /*
-     * Theo dõi thời gian bắt đầu của trò chơi để tính toán thời gian đã trôi qua.
+     *Theo dõi thời gian bắt đầu của trò chơi để tính toán thời gian đã trôi qua.
      */
     private long startTime;
 

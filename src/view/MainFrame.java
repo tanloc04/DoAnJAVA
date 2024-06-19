@@ -32,7 +32,7 @@ public class MainFrame extends JFrame {
     
     public MainFrame() {
 
-        setTitle("Feeding Bobby");
+        setTitle("Feeding Frenzy");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
 

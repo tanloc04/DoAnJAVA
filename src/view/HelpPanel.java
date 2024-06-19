@@ -33,7 +33,8 @@ public class HelpPanel extends MenuPanel{
         gridBagLayout.rowWeights = new double[] { 1.0, 0.0, Double.MIN_VALUE };
         setLayout(gridBagLayout);
         
-        textArea = new JTextArea("HELP is being written and will be ready when the game is ready!");
+        textArea = new JTextArea("Dùng chuột để di chuyển con cá. \n"
+                + "Ăn các con cá có kích cỡ bé hơn để ghi điểm và cố gắng đừng để mất chuỗi frenzy");
         textArea.setFont(new Font("Tahoma", Font.BOLD, 12));
         textArea.setWrapStyleWord(true);
         textArea.setLineWrap(true);
