@@ -21,8 +21,10 @@ public class Bubble extends GameObject{
     
     public Bubble() {
         try {
+            // Đọc và tải hình ảnh của "bubble" từ file
             image = ImageIO.read(getClass().getResource("/resources/bubble.png"));
         } catch (IOException e) {
+            // In lỗi ra màn hình nếu có vấn đề khi tải hình ảnh
             e.printStackTrace();
         }
 
@@ -32,14 +34,19 @@ public class Bubble extends GameObject{
 
     @Override
     public void move() {
+        // Kiểm tra nếu bubble đã di chuyển ra ngoài phía trên màn hình
         if (y + height < 0) {
+            // Đặt lại vị trí y của bubble ở phía dưới màn hình
             y = GamePanel.RESOLUTION.height + height;
+            // Đặt lại vị trí x của bubble một cách ngẫu nhiên
             x = random.nextInt((GamePanel.RESOLUTION.width - width * 2)) + width / 2;
             return;
         }
 
+        // Di chuyển bubble lên trên theo hướng y với khoảng cách ngẫu nhiên
         y -= random.nextInt(1) + 1;
 
+        // Di chuyển bubble theo hướng x ngẫu nhiên
         if (random.nextInt(5) == 0) {
             if (random.nextBoolean()) {
                 x++;
@@ -48,6 +55,7 @@ public class Bubble extends GameObject{
             }
         }
 
+        // Kiểm tra và điều chỉnh vị trí x để đảm bảo bubble không ra ngoài màn hình
         if (x < 5) {
             x = 5;
         }

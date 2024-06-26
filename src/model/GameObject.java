@@ -39,14 +39,17 @@ public abstract class GameObject {
         isMarkedForDestroying = false;
     }
     
+    //Trả về hình chữ nhật bao quanh đối tượng dựa trên tọa độ và kích thước của nó
     public Rectangle getBoundingBox() {
         return new Rectangle(x, y, width, height);
     }
     
+    //Kiểm tra xem đối tượng có giao nhau với hình chữ nhật được truyền vào hay không
     public boolean intersects( Rectangle rectangle) {
         return getBoundingBox().intersects(rectangle);
     }
     
+    //Thiết lập hướng di chuyển của đối tượng và lật hình ảnh nếu cần thiết
     public void setDirection( Direction changeDirection) {
         if ((changeDirection == Direction.LEFT && lookingDirection == Direction.RIGHT)
                 || (changeDirection == Direction.RIGHT && lookingDirection == Direction.LEFT)) {
@@ -61,6 +64,7 @@ public abstract class GameObject {
         }
     }
     
+    //Lật hình ảnh theo chiều dọc
     public void flipVertically() {
         AffineTransform tx = AffineTransform.getScaleInstance(1, -1);
         tx.translate(0, -image.getHeight(null));
@@ -73,6 +77,7 @@ public abstract class GameObject {
         }
     }
     
+    //Lật hình ảnh theo chiều ngang
     public void flipHorizontally() {
         AffineTransform tx = AffineTransform.getScaleInstance(-1, 1);
         tx.translate(-image.getWidth(null), 0);
@@ -94,6 +99,7 @@ public abstract class GameObject {
         this.y = y;
     }
 
+    // Thiết lập vị trí của một đối tượng theo một điểm
     public void setPosition( Point point) {
         this.x = point.x;
         this.y = point.y;
