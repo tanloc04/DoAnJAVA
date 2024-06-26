@@ -46,7 +46,7 @@ public class MainMenuPanel extends MenuPanel {
             e.printStackTrace();
         }
 
-        // Set GridBagLayout and constraints
+        
         GridBagLayout gridBagLayout = new GridBagLayout();
         gridBagLayout.columnWidths = new int[] { 0, 150, 50 };
         gridBagLayout.rowHeights = new int[] { 0, 65, 65, 65, 65, 65, 65, 65, 0, 0 };

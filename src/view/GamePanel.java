@@ -39,15 +39,22 @@ import model.PlayerFish;
  * @author ADMIN
  */
 public class GamePanel extends MenuPanel implements ComponentListener{
+    
+    //Kích thước màn hình của game
     public static final Dimension RESOLUTION = new Dimension(800, 600);
-
+    
+    //Khởi tạo 1 mảng kiểu GameObject để chứa các đối tượng gameObjects
     private List<GameObject> gameObjects;
-
+    
+    //Khai báo con cá của người chơi
     private PlayerFish playerFish;
 
+    //Khai báo biến dành cho ảnh nền của game
     private Image backgroundImage;
-
+    
+    //Biến thay đổi cấp độ khó dễ của trò chơi
     private boolean isInLevelTransition = false;
+    //Các biến về thời gian
     private int seconds;
     private int minutes;
     
@@ -96,33 +103,32 @@ public class GamePanel extends MenuPanel implements ComponentListener{
             return;
         }
 
-        // Hide cursor to let player be visible by itself
-        // Create a new blank cursor.
+       
         BufferedImage cursorImg = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice()
                 .getDefaultConfiguration().createCompatibleImage(16, 16, Transparency.TRANSLUCENT);
         Cursor blankCursor = Toolkit.getDefaultToolkit().createCustomCursor(cursorImg, new Point(0, 0), "blank cursor");
-        // Set the blank cursor to the JFrame.
+        
         setCursor(blankCursor);
 
-        // Get Graphics 2D from graphics object g
+        
         Graphics2D graphics2d = (Graphics2D) g;
-        // Set font for something visible
+        
         graphics2d.setFont(graphics2d.getFont().deriveFont(Font.BOLD, 20));
-        // Set quality
+        
         applyGraphicQuality(graphics2d);
-        // Draw Background
+        
         graphics2d.drawImage(backgroundImage, 0, 0, RESOLUTION.width, RESOLUTION.height, null);
 
-        // Draw Bars
+        
         graphics2d.setColor(Color.DARK_GRAY);
-        // Frenzy Bar Background
+        
         graphics2d.fillRoundRect(10, 10, 210, 40, 5, 5);
-        // Growth Bar Background
+        
         graphics2d.fillRoundRect(RESOLUTION.width - 220, 10, 210, 40, 5, 5);
         graphics2d.setColor(Color.ORANGE);
-        // Frenzy Bar Frame
+        
         graphics2d.drawRect(15, 15, 200, 30);
-        // Frenzy Bar
+        
         graphics2d.fillRect(15, 15, playerFish.getFrenzy() * 2, 30);
         graphics2d.setColor(Color.WHITE);
         String frenzyText;
@@ -135,30 +141,30 @@ public class GamePanel extends MenuPanel implements ComponentListener{
                 50 - graphics2d.getFontMetrics().getHeight() / 2);
 
         graphics2d.setColor(Color.BLUE);
-        // Growth bar frame
+        
         graphics2d.drawRect(RESOLUTION.width - 215, 15, 200, 30);
-        // Growth bar
+        
         graphics2d.fillRect(RESOLUTION.width - 215, 15, playerFish.getGrowth() * 2, 30);
-        // Growth text
+        
         graphics2d.setColor(Color.WHITE);
         String sizeText = "Size: " + playerFish.getSize();
         graphics2d.drawString(sizeText,
                 RESOLUTION.width - (215 + graphics2d.getFontMetrics().stringWidth(sizeText)) / 2,
                 50 - graphics2d.getFontMetrics().getHeight() / 2);
 
-        // Draw Lives
+        
         graphics2d.setColor(Color.GREEN);
         String livesText = "Lives: " + playerFish.getLives();
         graphics2d.drawString(livesText, (RESOLUTION.width - graphics2d.getFontMetrics().stringWidth(livesText)) / 2,
                 50 - graphics2d.getFontMetrics().getHeight() / 2);
 
-        // Draw Time
+        
         graphics2d.setColor(Color.BLACK);
         graphics2d.setFont(graphics2d.getFont().deriveFont(Font.BOLD, 10));
         String timeText = String.format("%02d : %02d", minutes, seconds % 60);
         graphics2d.drawString(timeText, (RESOLUTION.width - graphics2d.getFontMetrics().stringWidth(timeText)) / 2, 50);
 
-        // Draw Level State
+        
         if (isInLevelTransition) {
             graphics2d.setFont(graphics2d.getFont().deriveFont(Font.BOLD, 30));
             String levelCompleteText = String.format("LEVEL COMPLETE!");
@@ -169,7 +175,7 @@ public class GamePanel extends MenuPanel implements ComponentListener{
 
         graphics2d.setColor(Color.WHITE);
 
-        // Draw Player
+        
         if (playerFish.isCurrentlyActive()) {
             if (playerFish.getFrenzy() >= 100) {
                 BufferedImage frenzyMask = generateMask(playerFish.getImage(), Color.ORANGE, 0.6f);
@@ -194,7 +200,7 @@ public class GamePanel extends MenuPanel implements ComponentListener{
             }
         }
 
-        // Draw game objects
+        
         for (GameObject gameObject : gameObjects) {
             graphics2d.drawImage(gameObject.getImage(), gameObject.getX(), gameObject.getY(), gameObject.getWidth(),
                     gameObject.getHeight(), null);
