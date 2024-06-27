@@ -24,7 +24,7 @@ public class Bubble extends GameObject{
             // Đọc và tải hình ảnh của "bubble" từ file
             image = ImageIO.read(getClass().getResource("/resources/bubble.png"));
         } catch (IOException e) {
-            // In lỗi ra màn hình nếu có vấn đề khi tải hình ảnh
+            // In lỗi ra màn hình nếu có vấn đề khi tải hình ản
             e.printStackTrace();
         }
 
