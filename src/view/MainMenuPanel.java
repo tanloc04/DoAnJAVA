@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import controller.GameManager;
+import java.awt.Color;
 
 /**
  *
@@ -61,6 +62,8 @@ public class MainMenuPanel extends MenuPanel {
         gbc_newGameButton.gridx = 1;
         gbc_newGameButton.gridy = 1;
         add(startNewGameButton, gbc_newGameButton);
+        startNewGameButton.setBackground(Color.BLUE);
+        startNewGameButton.setForeground(Color.WHITE);
 
         highScoresButton = new JButton("High Scores");
         GridBagConstraints gbc_highScoresButton = new GridBagConstraints();
@@ -69,6 +72,8 @@ public class MainMenuPanel extends MenuPanel {
         gbc_highScoresButton.gridx = 1;
         gbc_highScoresButton.gridy = 2;
         add(highScoresButton, gbc_highScoresButton);
+        highScoresButton.setBackground(Color.BLUE);
+        highScoresButton.setForeground(Color.WHITE);
 
         helpButton = new JButton("Help");
         GridBagConstraints gbc_helpButton = new GridBagConstraints();
@@ -77,6 +82,8 @@ public class MainMenuPanel extends MenuPanel {
         gbc_helpButton.gridx = 1;
         gbc_helpButton.gridy = 3;
         add(helpButton, gbc_helpButton);
+        helpButton.setBackground(Color.BLUE);
+        helpButton.setForeground(Color.WHITE);
 
         settingsButton = new JButton("Settings");
         GridBagConstraints gbc_settingsButton = new GridBagConstraints();
@@ -85,6 +92,8 @@ public class MainMenuPanel extends MenuPanel {
         gbc_settingsButton.gridx = 1;
         gbc_settingsButton.gridy = 4;
         add(settingsButton, gbc_settingsButton);
+        settingsButton.setBackground(Color.BLUE);
+        settingsButton.setForeground(Color.WHITE);
 
         aboutButton = new JButton("About");
         GridBagConstraints gbc_aboutButton = new GridBagConstraints();
@@ -93,6 +102,8 @@ public class MainMenuPanel extends MenuPanel {
         gbc_aboutButton.gridx = 1;
         gbc_aboutButton.gridy = 5;
         add(aboutButton, gbc_aboutButton);
+        aboutButton.setBackground(Color.BLUE);
+        aboutButton.setForeground(Color.WHITE);
 
         creditsButton = new JButton("Credits");
         GridBagConstraints gbc_creditsButton = new GridBagConstraints();
@@ -101,6 +112,8 @@ public class MainMenuPanel extends MenuPanel {
         gbc_creditsButton.gridx = 1;
         gbc_creditsButton.gridy = 6;
         add(creditsButton, gbc_creditsButton);
+        creditsButton.setBackground(Color.BLUE);
+        creditsButton.setForeground(Color.WHITE);
 
         exitButton = new JButton("Exit");
         GridBagConstraints gbc_exitButton = new GridBagConstraints();
@@ -109,6 +122,8 @@ public class MainMenuPanel extends MenuPanel {
         gbc_exitButton.gridx = 1;
         gbc_exitButton.gridy = 7;
         add(exitButton, gbc_exitButton);
+        exitButton.setBackground(Color.red);
+        exitButton.setForeground(Color.WHITE);
 
         setActionListeners();
     }
