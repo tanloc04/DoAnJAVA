@@ -22,6 +22,7 @@ public class AboutPanel extends MenuPanel{
     private JButton backButton;
     private JTextArea textArea;
     
+    //Hiển thị các thông tin liên quan về game
     public AboutPanel(CardLayout cardLayout, JPanel cardPanel) {
         super(cardLayout, cardPanel);
 
